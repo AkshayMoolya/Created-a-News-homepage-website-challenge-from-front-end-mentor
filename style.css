@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: hsl(36, 100%, 99%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.nav {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+.nav .logo {
+  width: 50px;
+}
+.nav .logo img {
+  width: 100%;
+}
+.info ul {
+  display: flex;
+  list-style: none;
+}
+.info ul li {
+  margin-left: 25px;
+  cursor: pointer;
+}
+.info ul li:hover {
+  color: hsl(35, 77%, 62%);
+  border: none;
+}
+
+main {
+  margin-top: 30px;
+  display: grid;
+  grid-template-areas:
+    "desk desk aside"
+    "left right aside";
+  gap: 25px;
+  width: 1000px;
+  margin-bottom: 25px;
+}
+.container {
+  grid-area: desk;
+}
+.container img {
+  width: 100%;
+}
+
+.damn {
+  grid-area: left;
+  width: 300px;
+  font-size: 26px;
+}
+.message {
+  grid-area: right;
+  line-height: 25px;
+  font-size: 15px;
+}
+.message p {
+  color: hsl(236, 13%, 42%);
+}
+
+.message button {
+  padding: 15px 25px;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: none;
+  background-color: hsl(5, 85%, 63%);
+  color: white;
+  letter-spacing: 2px;
+  margin-top: 25px;
+  cursor: pointer;
+}
+.message button:hover {
+  background-color: black;
+}
+.containee {
+  display: flex;
+  flex-direction: column;
+  grid-area: aside;
+  background-color: hsl(240, 100%, 5%);
+  padding: 20px;
+}
+.containee .head {
+  font-size: 35px;
+  color: hsl(35, 77%, 62%);
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+.containee h4 {
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+.containee h4:hover {
+  color: hsl(35, 77%, 62%);
+}
+.containee p {
+  color: hsl(233, 8%, 79%);
+  font-size: 15px;
+  margin-bottom: 38px;
+}
+
+.containee span {
+  background-color: hsl(233, 8%, 79%);
+  width: 100%;
+  height: 1px;
+  margin-bottom: 25px;
+}
+.purge {
+  margin-top: 75px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 1000px;
+  margin-bottom: 150px;
+  gap: 25px;
+}
+.purge .handle {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.handle img {
+  width: 100%;
+}
+.discription h3 {
+  color: hsl(233, 8%, 79%);
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+.discription h5 {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.discription h5:hover {
+  color: hsl(5, 85%, 63%);
+}
+.discription p {
+  font-weight: 15px;
+  line-height: 1.4;
+}
+.info .show{
+  right: 100px;
+}
+.open{
+  display: none;
+}
+.hidden{
+  display: none;
+}
+.close{
+  display: none;
+}
+@media (max-width: 1100px) {
+  main {
+    grid-template-areas:
+      "desk"
+      "left"
+      "right"
+      "aside";
+      width: 355px;
+  }
+  .nav{
+    position: relative;
+  }
+  .show{
+    left: 60%;
+    box-shadow: 0 0 0 100vw rgb(0 0 0 / 50%);
+    
+  }
+  .close{
+    display: none;
+  }
+  .info{
+    position: fixed;
+    background-color: white;
+    height: 100vh;
+    width: 70%;
+    right:  -100%;
+    top: 0px;
+    transition: all 0.5s ease-out ;
+  }
+  
+  .info ul{
+    flex-direction: column;
+  }
+  .info ul li{
+    margin-top: 35px;
+    font-weight: 700;
+  }
+  .purge{
+    width: 355px;
+  }
+  .handle:has([src ="./assets/images/image-retro-pcs.jpg"]){
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    
+  }
+  .handle:has([src="./assets/images/image-top-laptops.jpg"]){
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  .handle:has([src="./assets/images/image-gaming-growth.jpg" ]){
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+  .open{
+    display: block;
+  }
+  .close{
+    margin-left: 108px;
+    margin-top: 16px;
+    display: block;
+  }
+}
